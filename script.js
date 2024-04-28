@@ -6,7 +6,7 @@ const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
   //1. Create Object Array, with necessary components below
   //2. Form input, to add firstNameCell, lastNameCell, and salaryCell
-  //3. Objects will be called employee
+  //3. Objects will be called employees
 }
 
 // Display the average salary
@@ -21,14 +21,23 @@ const displayAverageSalary = function(employeesArray) {
       count++;
     });
   });
-  
+
   return count > 0 ? total / count : 0;
 }
 
 // Select a random employee
+let randomIndex = Math.floor(Math.random() * employees.length);
+
+let randomEmployee = employees[randomIndex];
+
+console.log("Random Employee: " + randomEmployee.firstName +" " +  randomEmployee.LastName);
+
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
   //1. Use rng to randomly display one object from object array Employees, logging name
+    let randomIndex = Math.floor(Math.random() * employees.length);
+    let randomEmployee = employees[randomIndex];
+    console.log("Random Employee: " + randomEmployee.firstNameCell +" " +  randomEmployee.LastNameCell);  
 }
 
 /*
