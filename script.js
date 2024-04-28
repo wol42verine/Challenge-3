@@ -6,12 +6,23 @@ const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
   //1. Create Object Array, with necessary components below
   //2. Form input, to add firstNameCell, lastNameCell, and salaryCell
+  //3. Objects will be called employee
 }
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
   // 1. Math function, taking in all salaryCell numbers, find average, and display
+  let total = 0;
+  let count = 0;
+  employeesArray.forEach(employee => {
+    employee.salaryCell.forEach(salary =>{
+      total += salary;
+      count++;
+    });
+  });
+  
+  return count > 0 ? total / count : 0;
 }
 
 // Select a random employee
