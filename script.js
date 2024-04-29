@@ -2,22 +2,27 @@
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
 // Collect employee data
-const collectEmployees = function() {
-  // TODO: Get user input to create and return an array of employee objects
-  //1. Create Object Array, with necessary components below
-  //2. Form input, to add firstNameCell, lastNameCell, and salaryCell
-  //3. Objects will be called employees
-}
+// TODO: Get user input to create and return an array of employee objects
+const collectEmployees = function("First Name", "Last Name", "Salary") {
+  let employee = {
+    firstNameCell: "First Name"
+    lastNameCell: "Last Name"
+    salaryCell: "Salary"
+  };
+};
+
+//How to connect employee object with displayaveragesalary and randomemployee?
 
 // Display the average salary
-const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
   // 1. Math function, taking in all salaryCell numbers, find average, and display
+const displayAverageSalary = function(employeesArray) {
+
   let total = 0;
   let count = 0;
   employeesArray.forEach(employee => {
-    employee.salaryCell.forEach(salary =>{
-      total += salary;
+    employee.salaryCell.forEach(Salary =>{
+      total += Salary;
       count++;
     });
   });
