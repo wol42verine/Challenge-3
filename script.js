@@ -30,7 +30,6 @@ while (isOn) {
 
 // Display the average salary
   // TODO: Calculate and display the average salary
-  // Issue: cannot read properties of undefined (forEach)
 const displayAverageSalary = function(employees) {
 
   let total = 0;
@@ -55,8 +54,8 @@ const displayAverageSalary = function(employees) {
 const getRandomEmployee = function(employees) {
   // TODO: Select and display a random employee
   //1. Use rng to randomly display one object from object array Employees, logging name
-    let randomIndex = Math.floor(Math.random() * employeesArray.length);
-    let randomEmployee = employeesArray[randomIndex];
+    let randomIndex = Math.floor(Math.random() * employees.length);
+    let randomEmployee = employees[randomIndex];
     console.log("Random Employee: " + randomEmployee.firstName +" " +  randomEmployee.LastName);  
 
    
@@ -71,7 +70,7 @@ const getRandomEmployee = function(employees) {
 */
 
 // Display employee data in an HTML table
-const displayEmployees = function(employeesArray) {
+const displayEmployees = function(employees) {
   // Get the employee table
   const employeeTable = document.querySelector('#employee-table');
 
@@ -79,8 +78,8 @@ const displayEmployees = function(employeesArray) {
   employeeTable.innerHTML = '';
 
   // Loop through the employee data and create a row for each employee
-  for (let i = 0; i < employeesArray.length; i++) {
-    const currentEmployee = employeesArray[i];
+  for (let i = 0; i < employees.length; i++) {
+    const currentEmployee = employees[i];
 
     const newTableRow = document.createElement("tr");
 
