@@ -1,40 +1,62 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
+
 // Collect employee data
-// TODO: Get user input to create and return an array of employee objects
-const collectEmployees = function("First Name", "Last Name", "Salary") {
-  let employee = {
-    firstNameCell: "First Name"
-    lastNameCell: "Last Name"
-    salaryCell: "Salary"
-  };
+
+
+const collectEmployees = function() {
+  const employees = [];
+
+let isOn = true  
+while (isOn) {
+    const firstName = prompt ("Enter First Name")
+    const lastName = prompt ("Enter Last Name")
+    let salary = prompt ("Enter Salary")
+    if (salary){
+      break
+      
+    }
+
+
+
+    let employee = {
+      firstNameCell: firstName,
+      lastNameCell: lastName,
+      salaryCell: salary,
+    };
+
+    employees.push (employee)
+
+  }
 };
 
 //How to connect employee object with displayaveragesalary and randomemployee?
 
 // Display the average salary
   // TODO: Calculate and display the average salary
-  // 1. Math function, taking in all salaryCell numbers, find average, and display
+  // Issue: cannot read properties of undefined (forEach)
 const displayAverageSalary = function(employeesArray) {
 
   let total = 0;
   let count = 0;
-  employeesArray.forEach(employee => {
-    employee.salaryCell.forEach(Salary =>{
-      total += Salary;
-      count++;
-    });
-  });
+  employeesArray.forEach((employee => {
+    if (employee.salaryCell) {
+      employee.salaryCell.forEach((Salary) => {
+        total += Salary;
+        count++;
+      });
+    }
+  }));
 
   return count > 0 ? total / count : 0;
-}
+};
 
 // Select a random employee
+//Issue!!! employee and employees unrecognized
+
 let randomIndex = Math.floor(Math.random() * employees.length);
-
 let randomEmployee = employees[randomIndex];
-
 console.log("Random Employee: " + randomEmployee.firstName +" " +  randomEmployee.LastName);
 
 const getRandomEmployee = function(employeesArray) {
