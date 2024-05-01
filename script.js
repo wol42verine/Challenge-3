@@ -19,7 +19,7 @@ while (isOn) {
     }
     salary=Number(salary);
 
-    employees.push({firstName,lastName,salaryCell:[salary]});
+    employees.push({firstName,lastName,salary:[salary]});
 
   }
 
@@ -31,13 +31,13 @@ while (isOn) {
 // Display the average salary
   // TODO: Calculate and display the average salary
   // Issue: cannot read properties of undefined (forEach)
-const displayAverageSalary = function(employeesArray) {
+const displayAverageSalary = function(employees) {
 
   let total = 0;
   let count = 0;
-  employeesArray.forEach((employee => {
-    if (employee.salaryCell) {
-      employee.salaryCell.forEach((Salary) => {
+  employees.forEach((employee => {
+    if (employee.salary) {
+      employee.salary.forEach((salary) => {
         total += Salary;
         count++;
       });
@@ -52,7 +52,7 @@ const displayAverageSalary = function(employeesArray) {
 
 
 
-const getRandomEmployee = function(employeesArray) {
+const getRandomEmployee = function(employees) {
   // TODO: Select and display a random employee
   //1. Use rng to randomly display one object from object array Employees, logging name
     let randomIndex = Math.floor(Math.random() * employeesArray.length);
@@ -92,14 +92,14 @@ const displayEmployees = function(employeesArray) {
     lastNameCell.textContent = currentEmployee.lastName;
     newTableRow.append(lastNameCell);
 
-    const salaryCell = document.createElement("td");
+    const salary = document.createElement("td");
     // Format the salary as currency
-    salaryCell.textContent = currentEmployee.salary.toLocaleString("en-US",{
+    salary.textContent = currentEmployee.salary.toLocaleString("en-US",{
       style:"currency",
       currency:"USD"
     });
 
-    newTableRow.append(salaryCell);
+    newTableRow.append(salary);
 
     employeeTable.append(newTableRow);
   }
@@ -110,7 +110,7 @@ const trackEmployeeData = function() {
 
   console.table(employees);
 
-  displayAverageSalary(employees);
+  displayAverageSalary(employee);
 
   console.log('==============================');
 
