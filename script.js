@@ -13,22 +13,17 @@ while (isOn) {
     const firstName = prompt ("Enter First Name")
     const lastName = prompt ("Enter Last Name")
     let salary = prompt ("Enter Salary")
-    if (salary){
-      break
+    if (!salary){
+      break;
       
     }
+    salary=Number(salary);
 
-
-
-    let employee = {
-      firstNameCell: firstName,
-      lastNameCell: lastName,
-      salaryCell: salary,
-    };
-
-    employees.push (employee)
+    employees.push({firstName,lastName,salaryCell:[salary]});
 
   }
+
+  return employees;
 };
 
 //How to connect employee object with displayaveragesalary and randomemployee?
@@ -55,17 +50,19 @@ const displayAverageSalary = function(employeesArray) {
 // Select a random employee
 //Issue!!! employee and employees unrecognized
 
-let randomIndex = Math.floor(Math.random() * employees.length);
-let randomEmployee = employees[randomIndex];
-console.log("Random Employee: " + randomEmployee.firstName +" " +  randomEmployee.LastName);
+
 
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
   //1. Use rng to randomly display one object from object array Employees, logging name
-    let randomIndex = Math.floor(Math.random() * employees.length);
-    let randomEmployee = employees[randomIndex];
-    console.log("Random Employee: " + randomEmployee.firstNameCell +" " +  randomEmployee.LastNameCell);  
-}
+    let randomIndex = Math.floor(Math.random() * employeesArray.length);
+    let randomEmployee = employeesArray[randomIndex];
+    console.log("Random Employee: " + randomEmployee.firstName +" " +  randomEmployee.LastName);  
+
+   
+  };
+
+
 
 /*
   ====================
