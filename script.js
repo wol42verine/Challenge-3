@@ -1,3 +1,4 @@
+//Issue: Can't tell if working correctly, average salary and random employee
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
@@ -29,7 +30,7 @@ while (isOn) {
 //How to connect employee object with displayaveragesalary and randomemployee?
 
 // Display the average salary
-  // TODO: Calculate and display the average salary
+ 
 const displayAverageSalary = function(employees) {
 
   let total = 0;
@@ -37,7 +38,7 @@ const displayAverageSalary = function(employees) {
   employees.forEach((employee => {
     if (employee.salary) {
       employee.salary.forEach((salary) => {
-        total += Salary;
+        total += salary;
         count++;
       });
     }
@@ -47,16 +48,16 @@ const displayAverageSalary = function(employees) {
 };
 
 // Select a random employee
-//Issue!!! employee and employees unrecognized
+
 
 
 
 const getRandomEmployee = function(employees) {
   // TODO: Select and display a random employee
-  //1. Use rng to randomly display one object from object array Employees, logging name
+  
     let randomIndex = Math.floor(Math.random() * employees.length);
     let randomEmployee = employees[randomIndex];
-    console.log("Random Employee: " + randomEmployee.firstName +" " +  randomEmployee.LastName);  
+    console.log("Random Employee: " + randomEmployee.firstName +" " +  randomEmployee.lastName);  
 
    
   };
@@ -109,7 +110,7 @@ const trackEmployeeData = function() {
 
   console.table(employees);
 
-  displayAverageSalary(employee);
+  displayAverageSalary(employees);
 
   console.log('==============================');
 
