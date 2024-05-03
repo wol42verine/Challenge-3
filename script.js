@@ -20,7 +20,7 @@ while (isOn) {
     }
     salary=Number(salary);
 
-    employees.push({firstName,lastName,salary:[salary]});
+    employees.push({firstName,lastName,salary});
 
   }
 
@@ -34,8 +34,13 @@ while (isOn) {
 const displayAverageSalary = function(employees) {
 
   let total = 0;
-  let count = 0;
-  employees.forEach((employee => {
+  let numOfEmployees = employees.length;
+
+  for (const employee of employees) {
+    total += employees.salary;
+
+  }
+  /*employees.forEach((employee => {s
     if (employee.salary) {
       employee.salary.forEach((salary) => {
         total += salary;
@@ -43,10 +48,12 @@ const displayAverageSalary = function(employees) {
       });
     }
   }));
+  return count = total / count;*/
 
-  return count > 0 ? total / count : 0;
+    console.log (employees.salary)
+  
 };
-
+//console.log (displayAverageSalary);
 // Select a random employee
 
 
@@ -57,9 +64,8 @@ const getRandomEmployee = function(employees) {
   
     let randomIndex = Math.floor(Math.random() * employees.length);
     let randomEmployee = employees[randomIndex];
-    console.log("Random Employee: " + randomEmployee.firstName +" " +  randomEmployee.lastName);  
-
-   
+    console.log("Random Employee", randomEmployee.firstName +" " +  randomEmployee.lastName);  
+    //console.log (randomEmployee.firstName);   
   };
 
 
