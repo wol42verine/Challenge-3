@@ -37,9 +37,14 @@ const displayAverageSalary = function(employees) {
   let numOfEmployees = employees.length;
 
   for (const employee of employees) {
-    total += employees.salary;
+    total += employee.salary;
 
   }
+  const averageSalary = total / numOfEmployees;
+
+  console.log (`${averageSalary.toFixed(2)}`);
+//console.log (total);
+
   /*employees.forEach((employee => {s
     if (employee.salary) {
       employee.salary.forEach((salary) => {
@@ -50,7 +55,7 @@ const displayAverageSalary = function(employees) {
   }));
   return count = total / count;*/
 
-    console.log (employees.salary)
+    //console.log (employees.salary)
   
 };
 //console.log (displayAverageSalary);
